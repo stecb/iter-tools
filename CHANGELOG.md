@@ -6,25 +6,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [7.0.0] - UNRELEASED
 ### Removed
+ - zipLongest, asyncZipLongest,
  - iter, asyncIter
+ - mergeByComparison, mergeByChance, mergeByPosition, asyncMergeByComparison, asyncMergeByChance, asyncMergeByPosition, asyncMergeByReadiness
 
-### Renamed
- - pipe to pipeline
+### Changed
+ - pipe: Renamed to pipeline
+ - merge: Instead of sequencing items, now combines them (see collate for old behavior)
 
 ### Added
  - pipe
+ - collate, asyncCollate: Formerly named merge. No longer takes a helper. Default with no params is now interleaving
+ - mergeAll, asyncMergeAll
+
 
 ## [6.2.3] - 2019-1-23
 ### Added
  -  flat, asyncFlat, cursor, asyncCursor, merge, asyncMerge, pipe, partition, async-partition
 
 ### Fixed
- -  async function can take an async callback
- -  find, asyncFind: they return undefined when an item has not been found
+ -  Async function can take an async callback
+ -  find, asyncFind: Now return undefined when an item has not been found
 
 ### Changed
  -  async-map, async-filter takes an extra optional argument "concurrency"
- -  combinatory function generators return an iterable with an extra method to calculate the size
+ -  Combinatory function generators return an iterable with an extra method to calculate the size
 
 ## [6.1.7] - 2018-11-06
 ### Fixed
